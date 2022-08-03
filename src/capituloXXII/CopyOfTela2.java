@@ -26,9 +26,10 @@ public class CopyOfTela2 extends JFrame implements ActionListener {
 		txtNome = new JTextField(20);
 		txtEmail = new JTextField(20);
 		btnSalvar = new JButton("Salvar");
-		btnExibir.addActionListener(this);
+		btnSalvar.addActionListener(this);
 		btnExibir = new JButton("Exibir");
 		btnExibir.addActionListener(this);
+		
 		painel = new JPanel();
 		painel.setLayout(new GridLayout(3, 2));
 		painel.add(lblNome);
@@ -44,7 +45,7 @@ public class CopyOfTela2 extends JFrame implements ActionListener {
 	}
 
 	public static void main(String[] args) {
-		CopyOfTela2 tela = new CopyOfTela2("Capítulo III");
+		CopyOfTela2 tela = new CopyOfTela2("CapÃ­tulo III");
 	}
 
 	@Override
@@ -58,7 +59,7 @@ public class CopyOfTela2 extends JFrame implements ActionListener {
 			// Adiciona a lista de Contatos
 			if (!txtNome.getText().isEmpty()) {
 				minhaLista.add(meuContato);
-				JOptionPane.showInternalMessageDialog(this,
+				JOptionPane.showInternalMessageDialog(null,
 						"Contato: " + txtNome.getText() + "adicionado com sucesso!");
 			}
 			// Desfaz o objeto meuContato
