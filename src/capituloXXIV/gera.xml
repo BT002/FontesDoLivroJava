@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<raiz>
+	<contato id="1">
+		<nome>Fulano de Tal</nome>
+		<email>fulano@provedor.com</email>
+	</contato>
+	<contato id="2">
+		<nome>Ciclano Silva</nome>
+		<email>cilo.ano@servidor.com.br</email>
+	</contato>
+</raiz>
+
+
+
