@@ -44,7 +44,9 @@ public class Tela extends JFrame implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		JOptionPane.showInternalMessageDialog(this, "O bot„o clicado foi o: " + e.getActionCommand());
+		JOptionPane.showInternalMessageDialog(null, "O bot√£o clicado foi o: " + e.getActionCommand());
+		System.out.println("Nome = " + txtNome.getText());
+		System.out.println("Email = " + txtEmail.getText());
 	}
 }
 
