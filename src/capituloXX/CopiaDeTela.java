@@ -12,6 +12,7 @@ public class CopiaDeTela extends JFrame{
 	private JTextField txtNome, txtEmail;
 	private JButton btnSalvar, btnExibir;
 	private JPanel painel;
+	
 	public CopiaDeTela(String titulo) {
 		super(titulo);
 		lblNome = new JLabel("Nome: ");
@@ -21,8 +22,8 @@ public class CopiaDeTela extends JFrame{
 		btnSalvar = new JButton("Salvar");
 		btnExibir = new JButton("Exibir");
 		painel = new JPanel();
-		// FlowLayout() é o gerenciamento de Layout padrão
-		// É ele que é assumido quando nenhum gerenciamento for escolhido
+		// FlowLayout() ï¿½ o gerenciamento de Layout padrï¿½o
+		// ï¿½ ele que ï¿½ assumido quando nenhum gerenciamento for escolhido
 		// Ele coloca os objetos em uma linha
 		painel.setLayout(new FlowLayout());
 		painel.add(lblNome);

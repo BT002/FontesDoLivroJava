@@ -1,17 +1,14 @@
 package capituloXX;
 
-import java.awt.Button;
-import java.awt.FlowLayout;
-import java.awt.Frame;
-import java.awt.Label;
-import java.awt.Panel;
-import java.awt.TextField;
+import java.awt.*;
+
 
 public class Tela extends Frame{
 	private Label lblNome, lblEmail;
 	private TextField txtNome, txtEmail;
 	private Button btnSalvar, btnExibir;
 	private Panel painel;
+	
 	public Tela(String titulo) {
 		super(titulo);
 		lblNome = new Label("Nome: ");
@@ -21,8 +18,8 @@ public class Tela extends Frame{
 		btnSalvar = new Button("Salvar");
 		btnExibir = new Button("Exibir");
 		painel = new Panel();
-		// FlowLayout() é o gerenciamento de Layout padrão
-		// É ele que é assumido quando nenhum gerenciamento for escolhido
+		// FlowLayout() ï¿½ o gerenciamento de Layout padrï¿½o
+		// ï¿½ ele que ï¿½ assumido quando nenhum gerenciamento for escolhido
 		// Ele coloca os objetos em uma linha
 		painel.setLayout(new FlowLayout());
 		painel.add(lblNome);
@@ -33,6 +30,7 @@ public class Tela extends Frame{
 		painel.add(btnExibir);
 		this.add(painel);
 	}
+	
 	public static void main(String[] args) {
 		Tela tela = new Tela("Segundo Livro");
 		tela.setVisible(true);
