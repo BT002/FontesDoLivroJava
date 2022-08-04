@@ -24,12 +24,12 @@ public class Tela extends JFrame {
 		btnSalvar = new JButton("Salvar");
 		btnExibir = new JButton("Exibir");
 		painel = new JPanel();
-		// GridLayout() é o gerenciador de layout
-		// que trabalha a posição dos objetos em linha e colunas
+		// GridLayout() ï¿½ o gerenciador de layout
+		// que trabalha a posiï¿½ï¿½o dos objetos em linha e colunas
 		painel.setLayout(new GridLayout(3, 2));
-		/* Na chamada ao construtor desse Gerenciador de Layout são informados os
-		 * números de linha (primeiro) e colunas (depois da vírgula */
-		painel.setLayout(new FlowLayout());
+		/* Na chamada ao construtor desse Gerenciador de Layout sï¿½o informados os
+		 * nï¿½meros de linha (primeiro) e colunas (depois da vï¿½rgula */
+		//painel.setLayout(new FlowLayout());
 		painel.add(lblNome);
 		painel.add(lblEmail);
 		painel.add(txtNome);

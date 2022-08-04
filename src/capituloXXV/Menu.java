@@ -17,12 +17,12 @@ public class Menu extends JFrame implements MenuListener, ActionListener{
 	private JMenuItem menuContatos, menuSair;
 	private Principal pcontatos = null;
 	public Menu(String titulo) {
-		/* Essa linha abaixo é a chamada ao construtor
+		/* Essa linha abaixo ï¿½ a chamada ao construtor
 		 * da superclasse (JFrame), deve ser a primeira
-		 * instrução do construtor de Menu.java
+		 * instruï¿½ï¿½o do construtor de Menu.java
 		 */
 		super(titulo);
-		/* Arqui é configurada a posição e tamanha da janela */
+		/* Arqui ï¿½ configurada a posiï¿½ï¿½o e tamanha da janela */
 		this.setBounds(100, 100, 456, 112);
 		iniciar();
 	}
@@ -45,10 +45,10 @@ public class Menu extends JFrame implements MenuListener, ActionListener{
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	public static void main(String[] args) {
-		new Menu("Menu da Aplicação").setVisible(true);
-		/** aqui é instaciado o objeto do tipo Menu,
-		 * passado o título da mesma e configurando o
-		 * modo de exibição como true --> verdadeiro
+		new Menu("Menu da AplicaÃ§Ã£o").setVisible(true);
+		/** aqui ï¿½ instaciado o objeto do tipo Menu,
+		 * passado o tï¿½tulo da mesma e configurando o
+		 * modo de exibiï¿½ï¿½o como true --> verdadeiro
 		 */
 	}
 	@Override
@@ -83,7 +83,7 @@ public class Menu extends JFrame implements MenuListener, ActionListener{
 			System.out.println("Menu Cadastro acionado");
 		}else if(e.getSource() == menuSobre){
 			System.out.println("Menu Sobre acionado");
-			JOptionPane.showInternalMessageDialog(this, "Créditos Java Avançado");
+			JOptionPane.showInternalMessageDialog(this, "CrÃ©ditos Java AvanÃ§ado");
 		}
 	}
 }

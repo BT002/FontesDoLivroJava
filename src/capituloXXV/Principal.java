@@ -29,6 +29,7 @@ public class Principal extends JDialog implements ActionListener{
 	private JTextField txtId, txtNome, txtEmail;
 	private JButton btnSalvar, btnExibir, btnLimpar, btnVoltar, btnImportar, btnExportar;
 	private JPanel painel;
+	private TabelaContatos ptab = null;
 	private boolean verificarEmail() {
 		boolean resp = false;
 		if(txtEmail.getText().contains("@")) {
@@ -39,14 +40,14 @@ public class Principal extends JDialog implements ActionListener{
 	public Principal(JFrame frame, String titulo, boolean modal) {
 		super(frame, titulo, modal);
 		// criando a janela como JDialog e colocando true em modal,
-		// fica impossível retornar ao menu sem fechar essa janela
+		// fica impossï¿½vel retornar ao menu sem fechar essa janela
 		barraMenu = new JMenuBar();
 		menuExibir = new JMenu("Exibir");
 		menuTabela = new JMenu("Tabela");
 		menuTabela.addActionListener(this);
 		barraMenu.add(menuTabela);
 		this.setJMenuBar(barraMenu);
-		lblId = new JLabel("Códgio: ");
+		lblId = new JLabel("Cï¿½dgio: ");
 		lblNome = new JLabel("Nome: ");
 		lblEmail = new JLabel("Email: ");
 		txtId = new JTextField(5);
@@ -105,13 +106,13 @@ public class Principal extends JDialog implements ActionListener{
 			meuContato.setId(Integer.parseInt(txtNome.getText()));
 			meuContato.setNome(txtNome.getText());
 			meuContato.setEmail(txtEmail.getText());
-			// Adiciona à lista de Contatos
+			// Adiciona ï¿½ lista de Contatos
 			if(!txtNome.getText().isEmpty()) {
 				if(verificarEmail()) {
 					Contato.adiciona(meuContato);
 					JOptionPane.showMessageDialog(this, "Contato: " + txtNome.getText() + " adicionado com sucesso!");
 				}else {
-					JOptionPane.showMessageDialog(this, "Esse email não é válido. Contato não adicionado.");
+					JOptionPane.showMessageDialog(this, "Esse email nï¿½o ï¿½ vï¿½lido. Contato nï¿½o adicionado.");
 				}
 			}
 			// Desfaz o objeto meuContato:
@@ -123,28 +124,28 @@ public class Principal extends JDialog implements ActionListener{
 			txtEmail.setText(null);
 		}
 		else if(e.getSource()==btnVoltar) {
-			int confirma = JOptionPane.showConfirmDialog(this, "Quer excluir os contatos?", "Capítulo capituloXXV", JOptionPane.YES_NO_OPTION);
+			int confirma = JOptionPane.showConfirmDialog(this, "Quer excluir os contatos?", "Capï¿½tulo capituloXXV", JOptionPane.YES_NO_OPTION);
 			if(confirma==JOptionPane.YES_OPTION) {
 				Contato.limpar();
 		}
 		this.setVisible(false);
 		}
 		else if(e.getSource() == btnImportar) {
-			System.out.println("Implementar importação");
+			System.out.println("Implementar importaï¿½ï¿½o");
 			try {
 				TrabalharXML.lerXML();
 			} catch (JDOMException e1) {
-				System.out.println("Exceção ao trabalhar com XML " + e1.getMessage());
+				System.out.println("Exceï¿½ï¿½o ao trabalhar com XML " + e1.getMessage());
 			} catch (IOException e1) {
-				System.out.println("Exceção ao trabalhar com Operação de Entrada/Saída: " + e1.getMessage());
+				System.out.println("Exceï¿½ï¿½o ao trabalhar com Operaï¿½ï¿½o de Entrada/Saï¿½da: " + e1.getMessage());
 			}
 		}
 		else if(e.getSource()==btnExportar) {
-			System.out.println("Implementar Exportação");
+			System.out.println("Implementar Exportaï¿½ï¿½o");
 			try {
 				TrabalharXML.escreverXML();
 			} catch (Exception e1) {
-				System.out.println("Exceção ao trabalhar com Operação de Entrada/Saída: " + e1.getMessage());
+				System.out.println("Exceï¿½ï¿½o ao trabalhar com Operaï¿½ï¿½o de Entrada/Saï¿½da: " + e1.getMessage());
 			}
 		}
 	}

@@ -12,16 +12,16 @@ import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 
 public class Menu extends JFrame implements MenuListener, ActionListener{
-	private JMenuBar barraMenu; // Essa é a barra de Menu
-	// Em seguida os próprios menus
+	private JMenuBar barraMenu; // Essa Ã© a barra de Menu
+	// Em seguida os prÃ³prios menus
 	private JMenu menuCadastro, menuSobre;
-	// Aqui são declarados os subitens dos menus, que depois
-	// serão adicionados aos respectivos menus
+	// Aqui sÃ£o declarados os subitens dos menus, que depois
+	// serÃ£o adicionados aos respectivos menus
 	private JMenuItem menuContatos, menuSair;
 	private Principal pcontatos = null;
 	public Menu(String titulo) {
-		super(titulo); /* aqui é a chamada ao construtor da 
-		superclasse, deve ser a primeira instrução do construtor */
+		super(titulo); /* aqui Ã© a chamada ao construtor da 
+		superclasse, deve ser a primeira instruÃ§Ã£o do construtor */
 		this.setBounds(100, 100, 456, 112);
 		iniciar();
 	}
@@ -33,7 +33,7 @@ public class Menu extends JFrame implements MenuListener, ActionListener{
 		menuContatos = new JMenuItem("Contatos");
 		menuSair = new JMenuItem("Sair");
 		menuSobre = new JMenu("Sobre");
-		// Agora são adicionados os listeners respectivamente
+		// Agora sï¿½o adicionados os listeners respectivamente
 		menuCadastro.addMenuListener(this);
 		menuContatos.addActionListener(this);
 		menuSair.addActionListener(this);
@@ -42,26 +42,26 @@ public class Menu extends JFrame implements MenuListener, ActionListener{
 		menuCadastro.add(menuCadastro);
 		barraMenu.add(menuCadastro);
 		barraMenu.add(menuContatos);
-		// É configurada a barra de Menu
+		// ï¿½ configurada a barra de Menu
 		this.setJMenuBar(barraMenu);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	
 	public static void main(String[] args) {
-		new Menu("Menu da Aplicação").setVisible(true);
-		/** aqui é instaciado o objeto do tipo Menu,
-		 * o que é suficiente para abrir a janela,
-		 * passado o título da mesma e configurando o
-		 * modo de exibição como true
+		new Menu("Menu da AplicaÃ§Ã£o").setVisible(true);
+		/** aqui Ã© instaciado o objeto do tipo Menu,
+		 * o que Ã© suficiente para abrir a janela,
+		 * passado o tÃ­tulo da mesma e configurando o
+		 * modo de exibiÃ§Ã£o como true
 		 */
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		/* Se for clicando o item Contatos, então é testado
-		 * se já estpa criado o objeto da janela Principal e,
-		 * se já estiver criado apenas é tornado visivel
-		 * senão é criado (instanciado)
+		/* Se for clicando o item Contatos, entï¿½o ï¿½ testado
+		 * se jÃ¡ estÃ¡ criado o objeto da janela Principal e,
+		 * se jÃ¡ estiver criado apenas Ã© tornado visivel
+		 * senÃ£o Ã© criado (instanciado)
 		 */
 		if(e.getSource() == menuContatos) {
 			if(pcontatos == null) {
@@ -78,14 +78,14 @@ public class Menu extends JFrame implements MenuListener, ActionListener{
 	
 	@Override
 	public void menuCanceled(MenuEvent e) {
-		/* Aqui seria a programação que atenderia o presente evento.
-		 * Foi criado esse método para atender à necessidade de implementar
-		 * todos os métodos abstratos da interface MenuListener */
+		/* Aqui seria a programaÃ§Ã£o que atenderia o presente evento.
+		 * Foi criado esse mï¿½todo para atender Ã© necessidade de implementar
+		 * todos os mï¿½todos abstratos da interface MenuListener */
 	}
 	
 	@Override
 	public void menuDeselected(MenuEvent e) {
-		/* Esse código acontece quando o menu
+		/* Esse cÃ³digo acontece quando o menu
 		 * "perde" o foco que estava sobre ele
 		 */
 		if(e.getSource() == menuCadastro) {
@@ -97,19 +97,19 @@ public class Menu extends JFrame implements MenuListener, ActionListener{
 	
 	@Override
 	public void menuSelected(MenuEvent e) {
-		/* Aqui são trabalhados os eventos de clique nos Menus
-		 * propriamente ditos. Observe que aqui só são exemplo
-		 * apenas estamos exibindo mensagens com fins didáticos
+		/* Aqui sÃ£o trabalhados os eventos de clique nos Menus
+		 * propriamente ditos. Observe que aqui sÃ³ sÃ£o exemplos
+		 * apenas estamos exibindo mensagens com fins didÃ¡ticos
 		 */
 		if(e.getSource() == menuCadastro) {
 			/* aqui podem ser instanciadas e chamadas outras
 			 * janelas (filhas de JFrame) mas nesse exemplo
-			 * apenas estamos exibindo mensagens com fins didáticos
+			 * apenas estamos exibindo mensagens com fins didÃ¡ticos
 			 */
 			System.out.println("Menu Cadastro acionado");
 		}else if(e.getSource() == menuSobre){
 			System.out.println("Menu Sobre acionado");
-			JOptionPane.showInternalMessageDialog(this, "Créditos Java Avançado");
+			JOptionPane.showInternalMessageDialog(this, "CrÃ©ditos Java AvanÃ§ado");
 		}
 	}
 

@@ -13,14 +13,16 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import org.jdom2.JDOMException;
+
 public class Principal extends JDialog implements ActionListener{
 	private JLabel lblNome, lblEmail;
 	private JTextField txtNome, txtEmail;
 	private JButton btnSalvar, btnExibir, btnLimpar, btnVoltar, btnImportar, btnExportar;
-	// aqui foram adicionados os bot�es btnImportar e btnExportar
+	// aqui foram adicionados os botões btnImportar e btnExportar
 	private JPanel painel;
 	private boolean verificarEmail() {
-		/* Nesse  método tem-se uma caricatura de uma verifica��o
+		/* Nesse  método tem-se uma caricatura de uma verificação
 		 * de email (confetindo apenas se ele contém um arroba (@).
 		 * O leitor pode adicionar novas verifica��es quando quiser
 		 * seguindo a lógica desse modelo.
@@ -47,13 +49,13 @@ public class Principal extends JDialog implements ActionListener{
 		btnLimpar.addActionListener(this);
 		btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(this);
-		/* Abaixo est� a cria��o dos dois novos bot�es
-		 * (para a manipula��o do XML) que ser�o adicionados
-		 * ao painel e, consequentemente, � janela.
-		 * Tamb�m vemos em ambos a instru��o que os associa
+		/* Abaixo está a criação dos dois novos bot�es
+		 * (para a manipulação do XML) que serão adicionados
+		 * ao painel e, consequentemente, é janela.
+		 * Também vemos em ambos a instrução que os associa
 		 * aos Listeners.
-		 * Nota importante : quando a pr�pria classe gr�fica
-		 * implementa a interface ActionListener, ao adicion�-los
+		 * Nota importante : quando a própria classe gráfica
+		 * implementa a interface ActionListener, ao adicioná-los
 		 * basta a palavra-chave this.
 		 */
 		
@@ -65,8 +67,8 @@ public class Principal extends JDialog implements ActionListener{
 		/*
 		 * O Layout Manager (Gerenciador de Layout)
 		 * escolhido foi o GridLayout(5,2) e note que
-		 * nesse cap�tulo foi adicionada uma linha para
-		 * os novos bot�es
+		 * nesse capítulo foi adicionada uma linha para
+		 * os novos botões
 		 */
 		painel.setLayout(new GridLayout(5, 2));
 		painel.add(lblNome);
@@ -81,12 +83,12 @@ public class Principal extends JDialog implements ActionListener{
 		painel.add(btnExportar);
 		this.getContentPane().add(painel);
 		/*
-		 * Na linha abaixo, a configura��o de a��o
-		 * ao fechar a janela � a constante DISPOSE_ON_CLOSE.
+		 * Na linha abaixo, a configuração de ação
+		 * ao fechar a janela é a constante DISPOSE_ON_CLOSE.
 		 * e ela foi escolhida, pois queremos apenas fechar
-		 * essa JDialog e voltar ao meu da aplica��o (quando
+		 * essa JDialog e voltar ao meu da aplicação (quando
 		 * desejado).
-		 * Ou seja, a palavra DISPOSE n�o encerra a aplica��o
+		 * Ou seja, a palavra DISPOSE não encerra a aplicação
 		 * interira como faria EXIT_ON_CLOSE.
 		 */
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -112,7 +114,7 @@ public class Principal extends JDialog implements ActionListener{
 					Contato.adiciona(meuContato);
 					JOptionPane.showMessageDialog(this, "Contato: " + txtNome.getText() + " adicionado com sucesso!");
 				}else {
-					JOptionPane.showMessageDialog(this, "Esse email n�o � v�lido. Contato n�o adicionado.");
+					JOptionPane.showMessageDialog(this, "Esse email não é válido. Contato não adicionado.");
 				}
 			}else {
 				try {
@@ -134,12 +136,12 @@ public class Principal extends JDialog implements ActionListener{
 			this.setVisible(false);
 		}
 		else if(e.getSource() == btnImportar) {
-			System.out.println("Implementar importa��o");
+			System.out.println("Implementar importação");
 			/* Bloco try...catch() usado para tratar a 
-			 * exce��o a que est� sujeito o c�digo (declarada
+			 * exceção a que está sujeito o código (declarada
 			 * pelo throws no arquivo TrabalharXML.java.
-			 * E que s�o decorrentes de erros como
-			 * se algu�m apagar o arquivo XML do diret�rio
+			 * E que são decorrentes de erros como
+			 * se alguém apagar o arquivo XML do diretório
 			 * especificado, ou se estiver corrompido.
 			 */
 			try {
@@ -147,20 +149,20 @@ public class Principal extends JDialog implements ActionListener{
 			} catch (JDOMException e1) {
 			/* Caso seja disparada uma exce��o do tipo
 			 * JDOMException, ela serpa tratada aqui
-			 * com o nome de objeto e1 e ser� mostrada sua mensagem original.
+			 * com o nome de objeto e1 e será mostrada sua mensagem original.
 			 */
 				System.out.println(e1.getMessage());
 			} catch (IOException e1) {
-			/* J� se houver uma exce��o de Entrada e Sa�da,
-			 * seu tratamento se dar� aqui. Esse m�todo
+			/* Já se houver uma exce��o de Entrada e Sa�da,
+			 * seu tratamento se dará aqui. Esse método
 			 * printStackTrace do objeto e1 mostra a 
-			 * sequ�ncia dos c�digo envolvidos com a exce��o
+			 * sequência dos código envolvidos com a exceção
 			 */
 				e1.printStackTrace();
 			}
 		}
 		else if(e.getSource()==btnExportar) {
-			System.out.println("Implementar Exporta��o");
+			System.out.println("Implementar Exportação");
 			try {
 				TrabalharXML.escreverXML();
 			} catch (Exception e1) {
