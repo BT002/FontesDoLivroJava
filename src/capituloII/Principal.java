@@ -24,8 +24,8 @@ public class Principal {
 		System.out.println(num);
 		System.out.println(numero);
 		
-		boolean restituição = true;
-		if(restituição) {
+		boolean restitui��o = true;
+		if(restitui��o) {
 			System.out.println("Receber restituição");
 		}else {
 			System.out.println("Não Receber restituição");
