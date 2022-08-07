@@ -4,8 +4,18 @@ import java.awt.List;
 import java.awt.*;
 
 
+/*
+ Exemplo do Javadoc
+ Respos�vel pelo sistema
+ Diego de Mirandiba
+ */
+
+// Classe principal
+
+/** Classe Principal do capitulo 2*/
 public class Principal {
 
+	/** M�todo principal main*/
 	public static void main(String[] args) {
 
 		int num;            // Apenas declarada e não inicializada
@@ -24,8 +34,8 @@ public class Principal {
 		System.out.println(num);
 		System.out.println(numero);
 		
-		boolean restituição = true;
-		if(restituição) {
+		boolean restituicao = true;
+		if(restituicao) {
 			System.out.println("Receber restituição");
 		}else {
 			System.out.println("Não Receber restituição");
